@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage insertion</title>
+</head>
+<body>
+    <center>
+        <h1>Webpage model insertion</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="tn">topic_name: </label>
+            
+                {% for to in LTO %}
+
+                   
+                   <input type="radio" name="tn" id="tn" value="{{to.topic_name}}">{{to.topic_name}}</input><br><br>
+
+
+                {% endfor %}
+
+            
+            <label for="ne">name</label>
+            <input type="text" name="ne" id="ne"><br><br>
+            <label for="ul">URL</label>
+            <input type="text" name="ul" id="ul"><br><br>
+
+            <input type="submit">
+        </form>
+    </center>
+</body>
+</html>
